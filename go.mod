@@ -4,7 +4,6 @@ go 1.19
 
 require (
 	github.com/sago35/tinygo-keyboard v0.0.0-00010101000000-000000000000
-	tinygo.org/x/bluetooth v0.8.0
 	tinygo.org/x/tinyfont v0.4.0
 )
 
@@ -19,9 +18,14 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/tinygo-org/cbgo v0.0.4 // indirect
 	golang.org/x/sys v0.11.0 // indirect
+	tinygo.org/x/bluetooth v0.8.0
+
+	// github.com/funkycode/bluetooth v0.0.0
 	tinygo.org/x/drivers v0.25.0 // indirect
 )
 
 replace github.com/bgould/tinygo-rotary-encoder => github.com/akif999/tinygo-rotary-encoder v0.0.0-20230411081648-5d87ee99295e
 
 replace github.com/sago35/tinygo-keyboard => github.com/funkycode/tinygo-keyboard v0.0.0-20231030191234-2c7935fb51b9
+
+replace tinygo.org/x/bluetooth => /home/zogg/dev/bluetooth
