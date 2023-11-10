@@ -13,7 +13,7 @@ jobs:
   #       - /src:/home/github
   #   steps:
   #     - uses: actions/checkout@v4
-  build-left-side:
+  build:
     runs-on: ubuntu-latest
     container:
       image: tinygo/tinygo:0.30.0
@@ -28,5 +28,16 @@ jobs:
       - run: cd $GITHUB_WORKSPACE && ls -l 
       - run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - run: git config --global --add safe.directory /root/go/pkg/mod/
-      - run: tinygo build -target nicenano -size short -o corne_left_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/left
+      - name: build left side
+        run: tinygo build -target nicenano -size short -o corne_left_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/left
+      - uses: actions/upload-artifact@v3
+        with:
+          name: corne_left_nano.uf2
+          path: corne_left_nano.uf2
+      - name: build right side
+        run: tinygo build -target nicenano -size short -o corne_right_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/right
+      - uses: actions/upload-artifact@v3
+        with:
+          name: corne_right_nano.uf2
+          path: corne_right_nano.uf2
 
