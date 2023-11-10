@@ -6,19 +6,19 @@ on:
     - main
     - 'releases/**'
 jobs:
-  checkounte:
-    runs-on: ubuntu-latest
-    container:
-      volumes:
-        - /src:/home/github
-    steps:
-      - uses: actions/checkout@v4
+  # checkounte:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     volumes:
+  #       - /src:/home/github
+  #   steps:
+  #     - uses: actions/checkout@v4
   build-left-side:
     runs-on: ubuntu-latest
     container:
       image: tinygo/tinygo:0.30.0
-      volumes:
-        - /src:/home/github
+      # volumes:
+      #   - /src:/home/github
     steps:
       - uses: actions/checkout@v4
       - run: cd /home/github && tinygo build -target nicenano -size short -o corne_left_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/left
