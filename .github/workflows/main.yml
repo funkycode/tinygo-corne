@@ -7,8 +7,10 @@ on:
     - 'releases/**'
 jobs:
   build-left-side:
-    runs-on: tinygo/tinygo:0.30.0
+    runs-on: ubuntu-latest
+    container:
+      image: tinygo/tinygo:0.30.0
     steps:
       - uses: actions/checkout@v4
-      - run: tinygo build -target nicenano -size short -o corne_left_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/left
+      - run: cd $GITHUB_WORKSPACE && tinygo build -target nicenano -size short -o corne_left_nano.uf2 github.com/funkycode/tinygo-corne/nicenano/left
 
