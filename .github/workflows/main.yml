@@ -20,7 +20,7 @@ jobs:
       options: --user root
       env:
         PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/tinygo/bin:/usr/local/go/bin"
-        GITHUB_WORKSPACE: "/src"
+        GITHUB_WORKSPACE: "/src/nano"
       # volumes:
       #   - /src:/home/github
     steps:
