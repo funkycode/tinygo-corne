@@ -9,6 +9,8 @@ import (
 var adapter = bluetooth.DefaultAdapter
 var reportIn bluetooth.Characteristic
 
+var rx bluetooth.DeviceCharacteristic
+
 var reportMap = []byte{
 	0x05, 0x01, // USAGE_PAGE (Generic Desktop)
 	0x09, 0x06, // USAGE (Keyboard)
